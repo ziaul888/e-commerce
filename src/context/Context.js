@@ -12,6 +12,7 @@ class ProductProvider extends Component {
         cartOpen:false,
         cartItem:110,
         links:linkData,
+        cart:[]
     }
 
     handleSidebar=()=>{
@@ -21,10 +22,10 @@ class ProductProvider extends Component {
         this.setState({cartOpen:!this.state.cartOpen})
     }
 
-    CloseSidebar=()=>{
+    closeSidebar=()=>{
         this.setState({sidebarOpen:false})
     }
-    CloseCart=()=>{
+    closeCart=()=>{
         this.setState({cartOpen:false})
     }
 
@@ -33,9 +34,9 @@ class ProductProvider extends Component {
         <ProductContext.Provider value={{
             ...this.state,
             handleSidebar:this.handleSidebar,
-            handlecart:this.handleCart,
-            CloseSidebar:this.CloseCart,
-            CloseCart:this.CloseCart
+            handleCart:this.handleCart,
+            closeSidebar:this.closeCart,
+            closeCart:this.closeCart
         }}>
 
         {this.props.children}    

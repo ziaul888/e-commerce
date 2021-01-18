@@ -36,7 +36,7 @@ top:61px;
 left:0;
 width:100%;
 height:100%;
-background:var (--mainGrey);
+background:var(--mainGrey);
 z-index:1;
 border-right:3px solid var(--primaryColor);
 transition:var(--mainTransition);

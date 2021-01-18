@@ -28,9 +28,10 @@ function App() {
       <Route path="/about"   component={About}/>
       <Route path="/cart"   component={Cart}/>
       <Route path="/contact"   component={Contact}/>
-      <Route component={Default}/>  
-      <Route path ="/products" exact  component={Products}/>
+      
+      <Route path ="/product" exact  component={Products}/>
       <Route path="/products/:id"   component={SingleProduct}/>
+      <Route component={Default}/>  
     </Switch>
     <Footer/>
     </>
