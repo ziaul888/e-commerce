@@ -9,11 +9,11 @@ return (
 <>
   <ProductConsumer>
     {value=>{
-    const {cartItem, handleSiderbar,handleCart}=value;
+    const {cartItem,handleSidebar,handleCart}=value;
     return(
     <NavWrapper>
       <div className="nav-center">
-        <FaBars className="nav-icon" onClick={handleSiderbar} />
+        <FaBars className="nav-icon" onClick={handleSidebar}/>
         <img src={logo} alt="tech store " />
         <div className="nav-cart">
           <FaCartPlus className="nav-icon" onClick={handleCart} />

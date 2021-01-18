@@ -24,7 +24,7 @@ function App() {
     <SideBar/>
     <SideCart/>
     <Switch>
-      <Route path="/"  exact  component={Home}/>
+      <Route path="/" exact component={Home}/>
       <Route path="/about"   component={About}/>
       <Route path="/cart"   component={Cart}/>
       <Route path="/contact"   component={Contact}/>
