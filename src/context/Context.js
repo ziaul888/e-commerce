@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { linkData } from "./LinkData";
+import { socialData } from "../components/ContactPage/socailData";
 
 const ProductContext = React.createContext();
 
@@ -9,6 +10,7 @@ class ProductProvider extends Component {
     cartOpen: false,
     cartItem: 110,
     links: linkData,
+    socialIcons: socialData,
     cart: [],
   };
 
