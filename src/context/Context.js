@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { linkData } from "./LinkData";
 import { socialData } from "../components/ContactPage/socailData";
+import { items } from "./productData";
 
 const ProductContext = React.createContext();
 
@@ -8,10 +9,60 @@ class ProductProvider extends Component {
   state = {
     sidebarOpen: false,
     cartOpen: false,
-    cartItem: 110,
     links: linkData,
     socialIcons: socialData,
     cart: [],
+    cartItems: 0,
+    cartSubTotals: 0,
+    cartTax: 0,
+    cartTotal: 0,
+    storeProducts: [],
+    filterProducts: [],
+    featuredProducts: [],
+    singleProduct: {},
+    loading: false,
+  };
+
+  componentDidMount() {
+    this.setProducts(items);
+  }
+
+  setProducts = (products) => {
+    let storeProducts = products.map((item) => {
+      const { id } = item.sys;
+      const product = { id, ...item.fields };
+      return product;
+    });
+    console.log(storeProducts);
+    let featuredProducts = storeProducts.filter(
+      (item) => item.featured === true
+    );
+    this.setState({
+      storeProducts,
+      filterProducts: storeProducts,
+      featuredProducts,
+      cart: this.getStorageCart(),
+      singleProduct: this.getStorageProduct(),
+      loading: false,
+    });
+  };
+
+  getStorageCart = () => {
+    return [];
+  };
+  getStorageProduct = () => {
+    return {};
+  };
+  getTotals = () => {};
+  addTotals = () => {};
+
+  syncStorage = () => {};
+
+  addTocart = (id) => {
+    console.log(`add to cart ${id}`);
+  };
+  setSingleProduct = (id) => {
+    console.log(`set singleprodcut ${id}`);
   };
 
   handleSidebar = () => {
@@ -37,6 +88,8 @@ class ProductProvider extends Component {
           handleCart: this.handleCart,
           closeSidebar: this.closeCart,
           closeCart: this.closeCart,
+          addTocart: this.addTocart,
+          setSingleProduct: this.setSingleProduct,
         }}
       >
         {this.props.children}

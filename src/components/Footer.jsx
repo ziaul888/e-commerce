@@ -1,5 +1,5 @@
 import React from "react";
-import { NavItem } from "react-bootstrap";
+
 import styled from "styled-components";
 import { ProductConsumer } from "../context/Context";
 
