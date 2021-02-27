@@ -1,29 +1,28 @@
-export const linkData=[
-    {
-        id:1,
-        text:"home",
-        path:'/'
-    },
-    {
-        id:2,
-        text:"about",
-        path:'/about'
-    },
+export const linkData = [
+  {
+    id: 1,
+    text: "home",
+    path: "/",
+  },
+  {
+    id: 2,
+    text: "about",
+    path: "/about",
+  },
 
-    {
-        id:3,
-        text:"products",
-        path:'/product'
-    },
-    {
-        id:1,
-        text:"contact",
-        path:'/contact'
-    }
-    ,
-    {
-        id:1,
-        text:"cart",
-        path:'/cart'
-    }
-]
+  {
+    id: 3,
+    text: "products",
+    path: "/product",
+  },
+  {
+    id: 1,
+    text: "contact",
+    path: "/contact",
+  },
+  {
+    id: 1,
+    text: "cart",
+    path: "/cart",
+  },
+];

@@ -8,7 +8,7 @@ import About from "./pages/AboutPage";
 import Cart from "./pages/CartPage";
 import Contact from "./pages/ContactPage";
 import Default from "./pages/DefaultPage";
-import Products from "./pages/Products";
+import Products from "./pages/ProductsPage";
 import SingleProduct from "./pages/SingleProductPage";
 import NavBar from "./components/NavBar";
 import SideBar from "./components/SideBar";

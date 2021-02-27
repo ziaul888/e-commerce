@@ -8,7 +8,7 @@ export default function HomePage() {
   return (
     <>
       <Hero title="awesome gadgets" max="true">
-        <Link to="/products" className="main-link">
+        <Link to="/product" className="main-link">
           our products
         </Link>
       </Hero>
