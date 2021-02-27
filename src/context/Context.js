@@ -59,7 +59,7 @@ class ProductProvider extends Component {
 
   syncStorage = () => {};
 
-  addTocart = (id) => {
+  addToCart = (id) => {
     console.log(`add to cart ${id}`);
   };
   setSingleProduct = (id) => {
@@ -89,7 +89,7 @@ class ProductProvider extends Component {
           handleCart: this.handleCart,
           closeSidebar: this.closeCart,
           closeCart: this.closeCart,
-          addTocart: this.addTocart,
+          addToCart: this.addToCart,
           setSingleProduct: this.setSingleProduct,
         }}
       >
