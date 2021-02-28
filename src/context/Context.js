@@ -20,7 +20,7 @@ class ProductProvider extends Component {
     filterProducts: [],
     featuredProducts: [],
     singleProduct: {},
-    loading: false,
+    loading: true,
   };
 
   componentDidMount() {
@@ -63,7 +63,9 @@ class ProductProvider extends Component {
     return cart;
   };
   getStorageProduct = () => {
-    return {};
+    return localStorage.getItem("singleProduct")
+      ? JSON.parse(localStorage.getItem("singleProduct"))
+      : {};
   };
   getTotals = () => {
     let subTotals = 0;
@@ -126,7 +128,12 @@ class ProductProvider extends Component {
     console.log(`add to cart ${id}`);
   };
   setSingleProduct = (id) => {
-    console.log(`set singleprodcut ${id}`);
+    let product = this.state.storeProducts.find((item) => item.id === id);
+    localStorage.setItem("singleProduct", JSON.stringify(product));
+    this.setState({
+      singleProduct: { ...product },
+      loading: false,
+    });
   };
 
   handleSidebar = () => {
