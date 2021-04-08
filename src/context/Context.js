@@ -8,7 +8,7 @@ const ProductContext = React.createContext();
 class ProductProvider extends Component {
   state = {
     sidebarOpen: false,
-    cartOpen: true,
+    cartOpen: false,
     links: linkData,
     socialIcons: socialData,
     cart: [],
@@ -156,7 +156,22 @@ class ProductProvider extends Component {
   //handle cartItem fun
 
   increment = (id) => {
-    console.log(id);
+    const tempCart = [...this.state.cart];
+    const cartItem = tempCart.find((item) => item.id === id);
+    cartItem.count++;
+    cartItem.total = cartItem.count * cartItem.price;
+    cartItem.total = parseFloat(cartItem.total.toFixed(2));
+    this.setState(
+      () => {
+        return {
+          cart: [...tempCart],
+        };
+      },
+      () => {
+        this.addTotals();
+        this.syncStorage();
+      }
+    );
   };
 
   decrement = (id) => {
@@ -164,10 +179,28 @@ class ProductProvider extends Component {
   };
 
   removeItem = (id) => {
-    console.log(id);
+    let tempCart = [...this.state.cart];
+    tempCart = tempCart.filter((item) => item.id !== id);
+    this.setState(
+      {
+        cart: [...tempCart],
+      },
+      () => {
+        this.addTotals();
+        this.syncStorage();
+      }
+    );
   };
   clearCartItem = () => {
-    console.log("no item in cart");
+    this.setState(
+      {
+        cart: [],
+      },
+      () => {
+        this.addTotals();
+        this.syncStorage();
+      }
+    );
   };
 
   render() {

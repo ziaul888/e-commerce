@@ -7,12 +7,12 @@ export default function CartTotal() {
       <div className="row">
         <ProductConsumer>
           {(value) => {
-            const { clearCart, cartSubTotals, cartTotal, cartTax } = value;
+            const { clearCartItem, cartSubTotals, cartTotal, cartTax } = value;
             return (
               <div className="col  text-title text-center py-4">
                 <button
                   className="btn btn-outline-danger text-capitalize mb-4 "
-                  onClick={clearCart}
+                  onClick={clearCartItem}
                 >
                   clear cart
                 </button>
