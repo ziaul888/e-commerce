@@ -9,7 +9,7 @@ export default function CartList() {
         <div className="col">
           <ProductConsumer>
             {(value) => {
-              const { cart, icrement, decremnet, removeItem } = value;
+              const { cart, increment, decrement, removeItem } = value;
               if (cart.length === 0) {
                 return (
                   <h1 className="text-title text-center my-5">
@@ -23,8 +23,8 @@ export default function CartList() {
                     <CartItem
                       key={item.id}
                       cartItem={item}
-                      icrement={icrement}
-                      decremnet={decremnet}
+                      increment={increment}
+                      decrement={decrement}
                       removeItem={removeItem}
                     ></CartItem>
                   ))}
